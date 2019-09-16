@@ -13,7 +13,7 @@ import java.util.Collection;
  * Version 1.0
  **/
 public class Son extends Father{
-    public Collection doSomething(Map map) {
+    public Collection doSomething(HashMap map) {
         System.out.println("子类被执行...");
         return map.values();
     }

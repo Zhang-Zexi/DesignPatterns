@@ -12,7 +12,7 @@ import java.util.Map;
  * Version 1.0
  **/
 public class Father {
-    public Collection doSomething(HashMap map) {
+    public Collection doSomething(Map map) {
         System.out.println("父类被执行...");
         return map.values();
     }

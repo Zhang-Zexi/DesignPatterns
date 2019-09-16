@@ -13,5 +13,6 @@ public class Test {
 //        geely.studyJavaCourse();
 //        geely.studyFECourse();
         geely.studyCourse(new PythonCourse());
+        geely.studyCourse(new FECourse());
     }
 }
