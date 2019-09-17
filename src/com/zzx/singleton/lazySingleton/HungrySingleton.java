@@ -1,5 +1,7 @@
 package com.zzx.singleton.lazySingleton;
 
+import java.io.Serializable;
+
 /**
  * @ClassName HungrySingleton
  * @Description
@@ -7,7 +9,7 @@ package com.zzx.singleton.lazySingleton;
  * @Date 2019/9/17 11:06
  * Version 1.0
  **/
-public class HungrySingleton {
+public class HungrySingleton implements Serializable {
     // 类初始化的时候加载，可以设置成不可改
     private final static HungrySingleton hungrySingleton;
 
@@ -17,10 +19,16 @@ public class HungrySingleton {
     }
 
     private HungrySingleton() {
-
+        if (hungrySingleton != null) {
+            throw new RuntimeException("单例构造器禁止反射调用");
+        }
     }
 
     public static HungrySingleton getInstance() {
+        return hungrySingleton;
+    }
+
+    private Object readObject() {
         return hungrySingleton;
     }
 }

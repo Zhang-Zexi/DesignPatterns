@@ -18,5 +18,8 @@ public class StaticInnerClassSingleton {
 
     private StaticInnerClassSingleton() {
         // 私有的构造器是必须要有的，否则外部就要new出来了
+        if (InnerClass.staticInnerClassSingleton != null) {
+            throw new RuntimeException("单例构造器禁止反射调用");
+        }
     }
 }
